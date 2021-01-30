@@ -10,13 +10,25 @@ class MyInput extends Component {
             userInput: '',
 
         }
-        
+        console.log('react version: ', React.version);
+    }
+
+    handleInput = e => {
+        this.setState({
+            userInput: e.target.value
+        })
     }
 
     render() {
         return (
             <div>
-                <input></input>
+                <input
+                    type='text'
+                    className='input'
+                    placeholder='type away'
+                    value={this.state.userInput}
+                    onChange={this.handleInput}
+                />
             </div>
         )
     }
